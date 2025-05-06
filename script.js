@@ -1,0 +1,110 @@
+const user = {
+  name: "Luca",
+  location: "Aurillac",
+};
+
+window.onload = getWeather;
+async function getWeather() {
+  const url = `http://api.weatherapi.com/v1/current.json?key=10bc3031c1e341d683495754250105&q=${user.location}&aqi=no`;
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    const temperature = document.getElementById("temperature");
+    const icon = document.getElementById("icon");
+    temperature.innerText = `${data.current.temp_c}°C`;
+    icon.src = data.current.condition.icon;
+  } catch (error) {
+    console.log(error);
+  }
+}
+getWeather();
+
+class listInput {
+  constructor(name) {
+    (this.name = name), (this.finished = false);
+  }
+}
+
+const username = document.getElementById("username");
+username.innerText = user.name;
+
+// const todoInput = document.getElementById('todoInput');
+// const todoInputBtn = document.getElementById('todoForm');
+// const todoContent = [] ;
+// const todoList = document.getElementById('todoList');
+
+// todoInputBtn.addEventListener('submit', function(e) {
+//     e.preventDefault();
+//     console.log(todoInput.value);
+//     todoContent.push(new listInput(todoInput.value));
+//     console.log(todoContent);
+
+//     const li = document.createElement('li');
+//     li.innerText = todoInput.value;
+//     todoList.appendChild(li);
+//     todoInput.finished ? li.classList.add('finished') : li.classList.remove('finished');
+//     todoInput.value = '';
+// });
+
+// const ideaInput = document.getElementById('ideaInput');
+// const ideaInputBtn = document.getElementById('ideaForm');
+// const ideaContent = [] ;
+// const ideaList = document.getElementById('ideaList');
+
+// ideaInputBtn.addEventListener('submit', function(e) {
+//     e.preventDefault();
+//     console.log(ideaInput.value);
+//     ideaContent.push(new listInput(todoInput.value));
+
+//     const li = document.createElement('li');
+//     li.innerText = ideaInput.value;
+//     ideaList.appendChild(li);
+//     ideaInput.value = '';
+// });
+
+const timeContent = document.getElementById("time");
+function updateTime() {
+  const currentHour = new Date().getHours();
+  const currentMinute = new Date().getMinutes();
+  const currentSecond = new Date().getSeconds();
+  const hourString = currentHour < 10 ? `0${currentHour}` : currentHour;
+  const minuteString = currentMinute < 10 ? `0${currentMinute}` : currentMinute;
+  const secondString = currentSecond < 10 ? `0${currentSecond}` : currentSecond;
+  timeContent.innerText = `${hourString}:${minuteString}:${secondString}`;
+}
+updateTime();
+setInterval(updateTime, 1000);
+
+const modal = document.getElementById("paramsContainer");
+const paramsModal = document.getElementById("paramsModal");
+function toggleModal() {
+  modal.classList.toggle("active");
+  paramsModal.classList.toggle("active");
+}
+    
+    document.addEventListener("keydown", function (event) {
+  if (event.altKey && event.key === "Enter") {
+    event.preventDefault();
+    toggleModal();
+  }
+});
+
+const nameForm = document.getElementById("nameForm");
+nameForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const nameInput = document.getElementById("nameInput");
+  user.name = nameInput.value;
+  nameInput.value = "";
+  username.innerText = user.name;
+  hideModal()
+});
+
+const locationForm = document.getElementById("locationForm");
+locationForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const locationInput = document.getElementById("locationInput");
+  user.location = locationInput.value;
+  locationInput.value = "";
+  getWeather();
+  hideModal()
+});
