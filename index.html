@@ -11,42 +11,44 @@
       <header>
         <h1>Bienvenue <span id="username">Username</span></h1>
         <div id="dataBar">
-          <p id="time"></p>
-          <p id="meteo">
-            <span id="temperature"></span><img src="" alt="" id="icon" />
-          </p>
         </div>
       </header>
 
-      <div id="music">
-        <img src="/assets/img/album.jpg" alt="" />
-        <div id="songInfo">
-          <p id="songName">HELLMUSTFEARME</p>
-          <p id="bandName">Signs of the Swarm</p>
-        </div>
-      </div>
-      <section id="lists">
-        <div id="todoList">
-          <h2>TODO</h2>
-          <ul id="todoContent"></ul>
-        </div>
-      </section>
+      <div id="converterModal"></div>
 
-      <div id="paramsContainer">
-        <div id="paramsModal">
-          <form action="" id="nameForm">
-            <input type="text" id="nameInput" />
-          </form>
-          <form action="" id="locationForm">
-            <input type="text" id="locationInput" />
-          </form>
-        </div>
+      <div id="favoriteModal"></div>
+
+      <div id="paramsModal">
+        <form action="" id="nameForm">
+          <input type="text" id="nameInput" />
+        </form>
+        <form action="" id="locationForm">
+          <input type="text" id="locationInput" />
+        </form>
       </div>
+
+      <div id="projectsModal"></div>
+
       <footer>
-        <button>Convertisseur</button>
-        <button>Favoris</button>
-        <button>Paramètres</button>
-        <button>Projets</button>
+        <div id="infoBox">
+          <p id="time"></p>
+          <p id="temperature"></p> 
+          <img src="" alt="" id="icon" />
+        </div>
+
+        <div id="buttonBox">
+          <button>Convertisseur</button>
+          <button>Favoris</button>
+          <button>Paramètres</button>
+          <button>Projets</button>
+        </div>
+
+        <div id="musicBox">
+          <img src="/assets/img/spotify.png" alt="">
+          <p id="songInfo">HELLMUSTFEARME - Signs of the Swarm</p>
+          <!-- <img src="/assets/img/album.jpg" alt="" id="album"> -->
+          <p>▶ ⏸︎</p>
+        </div>
       </footer>
 
       <script src="script.js"></script>

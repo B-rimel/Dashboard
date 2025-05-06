@@ -75,17 +75,25 @@ function updateTime() {
 updateTime();
 setInterval(updateTime, 1000);
 
-const modal = document.getElementById("paramsContainer");
-const paramsModal = document.getElementById("paramsModal");
-function toggleModal() {
-  modal.classList.toggle("active");
-  paramsModal.classList.toggle("active");
-}
+
     
     document.addEventListener("keydown", function (event) {
-  if (event.altKey && event.key === "Enter") {
-    event.preventDefault();
-    toggleModal();
+      const modals = {
+        'u': 'converterModal',
+        'i': 'favoriteModal',
+        'o': 'paramsModal',
+        'p': 'projectsModal'
+      }
+      console.log(event)
+  if (event.altKey && event.key in modals) {
+    const key = modals[event.key];
+    if (key) {
+      event.preventDefault();
+      console.log(event)
+      const modal = document.getElementById(key);
+      console.log(modal)
+      modal.classList.toggle("active");
+    }
   }
 });
 
