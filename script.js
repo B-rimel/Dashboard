@@ -1,3 +1,7 @@
+// import { projects } from "./projects.js";
+// import { ideas } from "./ideas.js";
+import { resourceData } from "./resources.js";
+
 const user = {
   name: "Luca",
   location: "Aurillac",
@@ -75,28 +79,42 @@ function updateTime() {
 updateTime();
 setInterval(updateTime, 1000);
 
-
-    
-    document.addEventListener("keydown", function (event) {
-      const modals = {
-        'u': 'converterModal',
-        'i': 'favoriteModal',
-        'o': 'paramsModal',
-        'p': 'projectsModal'
-      }
-      console.log(event)
+document.addEventListener("keydown", function (event) {
+  const modals = {
+    u: "converterModal",
+    i: "favoriteModal",
+    o: "paramsModal",
+    p: "projectsModal",
+  };
+  console.log(event);
   if (event.altKey && event.key in modals) {
     const key = modals[event.key];
     if (key) {
       event.preventDefault();
-      console.log(event)
+      console.log(event);
       const modal = document.getElementById(key);
-      console.log(modal)
+      console.log(modal);
       modal.classList.toggle("active");
     }
   }
 });
 
+const resources = document.getElementById("resourcesList");
+
+for (let resource of resourceData.resources) {
+  const li = document.createElement("li");
+  const a = document.createElement("a");
+  a.href = resource.url;
+  const img = document.createElement("img");
+  img.src = resource.icon;
+  img.alt = resource.name; // add alt text for accessibility
+  a.appendChild(img);
+  const span = document.createElement("span");
+  span.textContent = resource.name;
+  a.appendChild(span);
+  li.appendChild(a);
+  resources.appendChild(li);
+}
 const nameForm = document.getElementById("nameForm");
 nameForm.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -104,7 +122,7 @@ nameForm.addEventListener("submit", function (e) {
   user.name = nameInput.value;
   nameInput.value = "";
   username.innerText = user.name;
-  hideModal()
+  hideModal();
 });
 
 const locationForm = document.getElementById("locationForm");
@@ -114,5 +132,5 @@ locationForm.addEventListener("submit", function (e) {
   user.location = locationInput.value;
   locationInput.value = "";
   getWeather();
-  hideModal()
+  hideModal();
 });

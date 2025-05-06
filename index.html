@@ -10,9 +10,13 @@
     <div id="content">
       <header>
         <h1>Bienvenue <span id="username">Username</span></h1>
-        <div id="dataBar">
-        </div>
+        <div id="dataBar"></div>
       </header>
+
+      <section id="resources">
+        <h2>Resources</h2>
+        <ul id="resourcesList"></ul>
+      </section>
 
       <div id="converterModal"></div>
 
@@ -30,10 +34,10 @@
       <div id="projectsModal"></div>
 
       <footer>
-        <div id="infoBox">
-          <p id="time"></p>
-          <p id="temperature"></p> 
-          <img src="" alt="" id="icon" />
+        <div id="musicBox">
+          <img src="/assets/img/spotify.png" alt="" />
+          <p id="songInfo">HELLMUSTFEARME - Signs of the Swarm</p>
+          <p>▶ ⏸︎</p>
         </div>
 
         <div id="buttonBox">
@@ -42,16 +46,14 @@
           <button>Paramètres</button>
           <button>Projets</button>
         </div>
-
-        <div id="musicBox">
-          <img src="/assets/img/spotify.png" alt="">
-          <p id="songInfo">HELLMUSTFEARME - Signs of the Swarm</p>
-          <!-- <img src="/assets/img/album.jpg" alt="" id="album"> -->
-          <p>▶ ⏸︎</p>
+        <div id="infoBox">
+          <p id="time"></p>
+          <p id="temperature"></p>
+          <img src="" alt="" id="icon" />
         </div>
       </footer>
 
-      <script src="script.js"></script>
+      <script type="module" src="script.js"></script>
     </div>
   </body>
 </html>
