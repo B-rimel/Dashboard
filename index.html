@@ -13,40 +13,56 @@
         <div id="dataBar"></div>
       </header>
 
-      <section id="resources">
+      <div id="columns">
+      <section id="resources" class="columnBox">
         <h2>Resources</h2>
         <ul id="resourcesList"></ul>
       </section>
+      <section id="ideas" class="columnBox">
+        <h2>Idees</h2>
+        <ul id="ideasList"></ul>
+      </section>
+      <section id="projects" class="columnBox">
+        <h2>Projets</h2>
+        <ul id="projectsList"></ul>
+      </section>
+    </div>
 
-      <div id="converterModal"></div>
+      <div id="converterModal" class="modal">
+        <form action="">
+          <input type="file">
+        </form>
+      </div>
 
-      <div id="favoriteModal"></div>
+      <div id="favoriteModal" class="modal"></div>
 
-      <div id="paramsModal">
+      <div id="paramsModal" class="modal">
         <form action="" id="nameForm">
+          <p>Nom</p>
           <input type="text" id="nameInput" />
         </form>
         <form action="" id="locationForm">
+          <p>Localisation</p>
           <input type="text" id="locationInput" />
         </form>
       </div>
 
-      <div id="projectsModal"></div>
+      <div id="projectsModal" class="modal"></div>
 
       <footer>
-        <div id="musicBox">
+        <div id="musicBox" class="footerBox">
           <img src="/assets/img/spotify.png" alt="" />
           <p id="songInfo">HELLMUSTFEARME - Signs of the Swarm</p>
           <p>▶ ⏸︎</p>
         </div>
 
-        <div id="buttonBox">
+        <div id="buttonBox" class="footerBox">
           <button>Convertisseur</button>
-          <button>Favoris</button>
+          <button>Ressources</button>
           <button>Paramètres</button>
           <button>Projets</button>
         </div>
-        <div id="infoBox">
+        <div id="infoBox" class="footerBox">
           <p id="time"></p>
           <p id="temperature"></p>
           <img src="" alt="" id="icon" />

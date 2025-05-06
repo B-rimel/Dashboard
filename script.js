@@ -1,5 +1,5 @@
 // import { projects } from "./projects.js";
-// import { ideas } from "./ideas.js";
+import { ideasData } from "./ideas.js";
 import { resourceData } from "./resources.js";
 
 const user = {
@@ -98,6 +98,15 @@ document.addEventListener("keydown", function (event) {
     }
   }
 });
+
+const ideas = document.getElementById("ideasList");
+for (let idea of ideasData.ideas) {
+  const li = document.createElement("li");
+  const span = document.createElement("span");
+  span.textContent = idea.name;
+  li.appendChild(span);
+  ideas.appendChild(li);
+}
 
 const resources = document.getElementById("resourcesList");
 

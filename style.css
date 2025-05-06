@@ -68,9 +68,24 @@ header {
   }
 }
 
-#resources {
+#columns {
+  width: 70%;
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
   font-family: "Noto Sans Kayah Li", sans-serif;
   height: 67%;
+
+  .columnBox {
+    width: calc(100%/3);
+    height: 100%;
+
+
+    h2 {
+      text-align: center;
+      color: white;
+    }
+  }
 
   ul {
     display: flex;
@@ -182,45 +197,22 @@ li {
   display: none;
 }
 
-#paramsContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(255, 255, 255, 0.2);
-}
-
-#paramsModal {
+.modal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  width: 30%;
-  height: 30%;
+  width: 40%;
+  height: 40%;
   background-color: white;
   justify-content: center;
   align-items: center;
   margin: auto;
 }
 
-#paramsModal:not(.active) {
+.modal:not(.active) {
   display: none;
 }
-
-#converterModal:not(.active) {
-  display: none;
-}
-
-#favoriteModal.active {
-  display: none;
-}
-
-#projetsModal.active {
-  display: none;
-}
-
 .active {
   display: flex;
 }
@@ -234,7 +226,6 @@ footer {
   width: 100%;
   height: 7%;
   display: flex;
-  justify-content: center;
   align-items: center;
   justify-items: center;
   justify-content: space-around;
@@ -242,6 +233,9 @@ footer {
   font-size: 1.2em;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
+  .footerBox {
+    width: calc(100%/3);
+  }
   #infoBox {
     gap: 10px;
     display: flex;
