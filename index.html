@@ -22,15 +22,21 @@
         <h2>Idees</h2>
         <ul id="ideasList"></ul>
       </section>
-      <section id="projects" class="columnBox">
-        <h2>Projets</h2>
-        <ul id="projectsList"></ul>
+      <section id="todo" class="columnBox">
+        <h2>A faire</h2>
+        <ul id="todoList"></ul>
       </section>
     </div>
 
       <div id="converterModal" class="modal">
-        <form action="">
-          <input type="file">
+        <form action="" id="fileForm">
+          <input type="file" id="imageInput">
+          <select id="outputFormat">
+            <option value="webp">WebP</option>
+            <option value="jpeg">JPEG</option>
+            <option value="png">PNG</option>
+          </select>
+          <button id="convertButton">Convertir</button>
         </form>
       </div>
 
@@ -70,6 +76,7 @@
       </footer>
 
       <script type="module" src="script.js"></script>
+      <script type="module" src="convert.js"></script>
     </div>
   </body>
 </html>
