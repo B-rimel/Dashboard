@@ -18,13 +18,21 @@
         <h2>Resources</h2>
         <ul id="resourcesList"></ul>
       </section>
+
       <section id="ideas" class="columnBox">
         <h2>Idees</h2>
         <ul id="ideasList"></ul>
+        <form id="form">
+          <input type="text" id="input">
+        </form>
       </section>
+      
       <section id="todo" class="columnBox">
         <h2>A faire</h2>
         <ul id="todoList"></ul>
+        <form id="form">
+          <input type="text" id="input">
+        </form>
       </section>
     </div>
 
@@ -55,28 +63,29 @@
 
       <div id="projectsModal" class="modal"></div>
 
-      <footer>
-        <div id="musicBox" class="footerBox">
-          <img src="/assets/img/spotify.png" alt="" />
-          <p id="songInfo">HELLMUSTFEARME - Signs of the Swarm</p>
-          <p>▶ ⏸︎</p>
-        </div>
-
-        <div id="buttonBox" class="footerBox">
-          <button>Convertisseur</button>
-          <button>Ressources</button>
-          <button>Paramètres</button>
-          <button>Projets</button>
-        </div>
-        <div id="infoBox" class="footerBox">
-          <p id="time"></p>
-          <p id="temperature"></p>
-          <img src="" alt="" id="icon" />
-        </div>
-      </footer>
-
       <script type="module" src="script.js"></script>
       <script type="module" src="convert.js"></script>
     </div>
+    <footer>
+      <div id="footerContainer">
+      <div id="musicBox" class="footerBox">
+        <img src="/assets/img/spotify.png" alt="" />
+        <p id="songInfo">Gethsemene - Sleep Token</p>
+        <p>▶ ⏸︎</p>
+      </div>
+
+      <div id="buttonBox" class="footerBox">
+        <button>Convertisseur</button>
+        <button>Ressources</button>
+        <button>Paramètres</button>
+        <button>Projets</button>
+      </div>
+      <div id="infoBox" class="footerBox">
+        <p id="time"></p>
+        <p id="temperature"></p>
+        <img src="" alt="" id="icon" />
+      </div>
+    </div>
+    </footer>
   </body>
 </html>

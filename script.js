@@ -114,6 +114,7 @@ for (let resource of resourceData.resources) {
   const li = document.createElement("li");
   const a = document.createElement("a");
   a.href = resource.url;
+  a.target = "_blank";
   const img = document.createElement("img");
   img.src = resource.icon;
   img.alt = resource.name; // add alt text for accessibility
